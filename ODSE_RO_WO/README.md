@@ -23,7 +23,8 @@ ODSE scheme leverages Intel AES-NI to accelerate cryptographic operations. The I
 # Configuration
 The configuration for ODSE scheme is located at ``ODSE_RO_WO/config.h``. 
 
-## Configurable Parameters:
+## Important Parameters:
+```
 
 #define ENCRYPT_BLOCK_SIZE 64                   -> define the block size of encryption (should be multiple of 8)
 
@@ -35,11 +36,22 @@ The configuration for ODSE scheme is located at ``ODSE_RO_WO/config.h``.
 #define INTEL_AES_NI                            -> define to enable using Intel AES-NI instruction to accelerate crypto operations
 
 #define NUM_SERVERS 2                           -> define the number of servers in the system
-
+#define PRIVACY_LEVEL (NUM_SERVERS-1)           -> definve the privacy parameter t in SSS (should be NUM_SERVER - 1)
 
 const std::string SERVER_ADDR[NUM_SERVERS] = {"tcp://localhost:", "tcp://localhost:"};  -> define IP address of servers
 
 const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                           -> define port of servers
+
+#define FF_SIZE 64                                        -> define the size of finite field size (by bit and should be multiplication of 8 and larger than log2(P) )
+static const unsigned long P = 512124571219774627;        -> prime field (should be ~ 60 bits to use NTL optimized instructions)
+#define NP_BITS 59                                       -> the ceiling number of bits of P
+ 
+```
+
+### Notes
+
+The folder ``ODSE_WO_WO/data`` as well as its subfolders are required to store generated encrypted index and client state. The database input is located in ``ODSE_WO_WO/data/DB``. All these locations can be changed in the `config.h` file. The implementation recognize DB as a set of document files so that you can copy your DB files to this location. The current DB contains a very small subset of enron DB (link: https://www.cs.cmu.edu/~./enron/).
+
 
 # Build & Compile
 Goto folder ``ODSE_RO_WO/`` and execute
