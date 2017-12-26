@@ -1,6 +1,6 @@
-# ODSE scheme using XOR-PIR and Write-Only ORAM
+# ODSE scheme using Shamir-Secret-Sharing (SSS)-based PIR and Write-Only ORAM
 
-Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM. The scheme is described under name $(ODSE^{XOR}_{WO})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
+Basic implementation of the ODSE scheme using SSS-based PIR and Write-Only ORAM. The scheme is described under name $(ODSE^{RO}_{WO})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
 
 
 # Required Libraries
@@ -39,12 +39,12 @@ const std::string SERVER_ADDR[NUM_SERVERS] = {"tcp://localhost:", "tcp://localho
 const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                           -> define port of servers
 
 # Build & Compile
-Goto folder ``ODSE_XOR_WO/`` and execute
+Goto folder ``ODSE_RO_WO/`` and execute
 ``` 
 make
 ```
 
-, which produces the binary executable file named ```ODSE_XOR_WO``` in ``ODSE_XOR_WO/Debug/``.
+, which produces the binary executable file named ```ODSE_RO_WO``` in ``ODSE_RO_WO/Debug/``.
 
 ### If there is an error regarding to BOOL/bool type when compiling with Intel-aes-ni
 
@@ -60,24 +60,24 @@ make
 
 1. Disable INTEL_AES_NI in ``IM-DSSE/config.h``
 
-2. Remove the library linker ``-lintel-aes64``  in the make file ``ODSE_XOR_WO/MakeFile``
+2. Remove the library linker ``-lintel-aes64``  in the make file ``ODSE_RO_WO/MakeFile``
 
 
 # Usage
 
-Run the binary executable file ```ODSE_XOR_WO```, which will ask for either Client or Server mode. The scheme can be tested using either **single** machine or **multiple** machines with network:
+Run the binary executable file ```ODSE_RO_WO```, which will ask for either Client or Server mode. The scheme can be tested using either **single** machine or **multiple** machines with network:
 
 ## Local Testing:
 1. Set ``SERVER_ADDR`` in ``IM-DSSE/config.h`` to be ``localhost``. 
-2. Compile the code with ``make`` in the ``ODSE_XOR_WO/`` folder. 
-4. Go to ``ODSE_XOR_WO/Debug`` and run the compiled ``ODSE_XOR_WO`` file with two different Terminals, each playing the client/server role.
+2. Compile the code with ``make`` in the ``ODSE_RO_WO/`` folder. 
+4. Go to ``ODSE_RO_WO/Debug`` and run the compiled ``ODSE_RO_WO`` file with two different Terminals, each playing the client/server role.
 
 Note that when running the binary file and selecting the <b>option 1</b> to initalize the encrypted index, press 'n' to avoid transmitting whole encrypted index to the server.
 
 ## Real Network Testing:
-1. Set ``SERVER_ADDR`` and  ``SERVER_PORT`` in ``ODSE_XOR_WO/config.h`` with the corresponding servers' IP address  and port number.
-2. Run ``make`` in ``ODSE_XOR_WO/`` to compile and generate executable file ``ODSE_XOR_WO`` in ``ODSE_XOR_WO/Debug`` folder.
-3. Copy the file ``ODSE_XOR_WO`` in ``ODSE_XOR_WO/Debug`` to the servers
+1. Set ``SERVER_ADDR`` and  ``SERVER_PORT`` in ``ODSE_RO_WO/config.h`` with the corresponding servers' IP address  and port number.
+2. Run ``make`` in ``ODSE_RO_WO/`` to compile and generate executable file ``ODSE_RO_WO`` in ``ODSE_RO_WO/Debug`` folder.
+3. Copy the file ``ODSE_RO_WO`` in ``ODSE_RO_WO/Debug`` to the servers
 4. Execute the file and follow the instruction on the screen.
 
 
