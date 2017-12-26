@@ -29,13 +29,16 @@ The configuration for ODSE scheme is located at ``ODSE_RO_WO/config.h``.
 
 #define MAX_NUM_OF_FILES 12544                  -> define the maximum number of files in the DB (should be multiple of (ENCRYPT_BLOCK_SIZE * 8)
 #define MAX_NUM_KEYWORDS MAX_NUM_OF_FILES       -> define the maximum number of keywords (should be multiple of 8)
+
 #define WRITE_ORAM_LAMBDA 30                    -> define the number of columns/blocks to be downloaded/uploaded in Write-Only ORAM
+
 #define INTEL_AES_NI                            -> define to enable using Intel AES-NI instruction to accelerate crypto operations
 
 #define NUM_SERVERS 2                           -> define the number of servers in the system
 
 
 const std::string SERVER_ADDR[NUM_SERVERS] = {"tcp://localhost:", "tcp://localhost:"};  -> define IP address of servers
+
 const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                           -> define port of servers
 
 # Build & Compile
