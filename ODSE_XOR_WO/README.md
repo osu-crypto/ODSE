@@ -25,6 +25,8 @@ The configuration for ODSE scheme is located at ``ODSE_XOR_WO/config.h``.
 
 ## Configurable Parameters:
 
+```
+
 #define ENCRYPT_BLOCK_SIZE 64                   -> define the block size of encryption (should be multiple of 8)
 
 #define MAX_NUM_OF_FILES 12544                  -> define the maximum number of files in the DB (should be multiple of (ENCRYPT_BLOCK_SIZE * 8)
@@ -37,6 +39,8 @@ The configuration for ODSE scheme is located at ``ODSE_XOR_WO/config.h``.
 
 const std::string SERVER_ADDR[NUM_SERVERS] = {"tcp://localhost:", "tcp://localhost:"};  -> define IP address of servers
 const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                           -> define port of servers
+
+```
 
 # Build & Compile
 Goto folder ``ODSE_XOR_WO/`` and execute
