@@ -23,7 +23,7 @@ ODSE scheme leverages Intel AES-NI to accelerate cryptographic operations. The I
 # Configuration
 The configuration for ODSE scheme is located at ``ODSE_XOR_WO/config.h``. 
 
-## Configurable Parameters:
+## Adjustable Parameters:
 
 ```
 
