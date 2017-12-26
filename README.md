@@ -8,7 +8,7 @@ This framework contains the basic implementation of three ODSE schemes described
 1. ZeroMQ (download link: http://zeromq.org/intro:get-the-software)
 2. Libtomcrypt (download link: https://github.com/libtom/libtomcrypt)
 3. Google sparsehash (download link: https://github.com/sparsehash/sparsehash)
-4. Intel AES-NI (*optional*) (for ODSE_RO_WO & ODSE_XOR_WO schemes) by (download link: https://software.intel.com/en-us/articles/download-the-intel-aesni-sample-library)
+4. Intel AES-NI (*optional*) (download link: https://software.intel.com/en-us/articles/download-the-intel-aesni-sample-library)
 5. NTL library v9.10.0  (download link: http://www.shoup.net/ntl/download.html) 
 
 # Installation/Configuration/Build/Complile Instructions
