@@ -13,7 +13,7 @@ This framework contains the basic implementation of three ODSE schemes described
 
 # Installation/Configuration/Build/Complile Instructions
 
-Detailed step-by-step instructions regarding building and installation of ODSE schemes is described in their own folder. Please refer to README.md located in each project folder for more details.
+Detailed step-by-step instructions regarding building and installation of ODSE schemes is described in their own folder. Please refer to ``README.md`` located in each project folder for more details.
 
 # Further Information
 For any inquiries, bugs, and assistance on building and running the code, please feel free to contact Thang Hoang (hoangmin@oregonstate.edu).
