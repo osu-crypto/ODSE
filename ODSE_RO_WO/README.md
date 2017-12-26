@@ -1,6 +1,6 @@
 # ODSE scheme using XOR-PIR and Write-Only ORAM
 
-Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM. The scheme is described under name $(ODSE^{XOR}_{WO})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspaces. 
+Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM. The scheme is described under name $(ODSE^{XOR}_{WO})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
 
 
 # Required Libraries
@@ -9,7 +9,9 @@ Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM. The s
 3. Google sparsehash (download link: https://github.com/sparsehash/sparsehash)
 4. Intel AES-NI (*optional*) (download link: https://software.intel.com/en-us/articles/download-the-intel-aesni-sample-library)
 5. NTL library v9.10.0  (download link: http://www.shoup.net/ntl/download.html) 
-## Intel AES-NI installation guide (optional) $(ODSE^{XOR}_{WO})$ leverages Intel AES-NI to accelerate cryptographic operations. The Intel-AES-NI is available in Intel® Core™ i5, Intel® Core™ i7, Intel® Xeon® 5600 series and newer processor (see https://ark.intel.com/Search/FeatureFilter?productType=processors&AESTech=true for a complete list). Note that this functionality can be *disabled* to test ODSE with other CPU models (see the Configuration Section below). Here the brief instruction to install Intel-AES-NI:
+## Intel AES-NI installation guide (optional)
+
+ODSE scheme leverages Intel AES-NI to accelerate cryptographic operations. The Intel-AES-NI is available in Intel® Core™ i5, Intel® Core™ i7, Intel® Xeon® 5600 series and newer processor (see https://ark.intel.com/Search/FeatureFilter?productType=processors&AESTech=true for a complete list). Note that this functionality can be *disabled* to test ODSE with other CPU models (see the Configuration Section below). Here the brief instruction to install Intel-AES-NI:
 
 1. Extract the .zip file downloaded from https://software.intel.com/en-us/articles/download-the-intel-aesni-sample-library
 2. Open the Terminal and go to `Intel_AESNI_Sample_Library_v1.2/intel_aes_lib`
