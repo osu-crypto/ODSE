@@ -1,6 +1,6 @@
 # ODSE scheme using XOR-PIR and Write-Only ORAM
 
-Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM on IND-CPA encrypted searchable index. The scheme is described under name $(ODSE^{WO}_{XOR})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
+Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM on IND-CPA encrypted searchable index. The scheme is described under name ODSE^{WO}_{XOR} in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
 
 
 # Required Libraries
