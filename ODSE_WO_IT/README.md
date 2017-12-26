@@ -12,7 +12,7 @@ Basic implementation of the ODSE scheme using SSS-based PIR and Write-Only ORAM 
 # Configuration
 The configuration for ODSE scheme is located at ``ODSE_WO_IT/config.h``. 
 
-## Important Parameters:
+## Important Parameters
 ```
 static const unsigned long P = 512124571219774627;        -> prime field (should be ~ 60 bits to use NTL optimized instructions)
 #define NP_BITS 59                                       -> the ceiling number of bits of P
