@@ -1,4 +1,4 @@
-# ODSE Scheme using Shamir-Secret-Sharing (SSS)-based PIR and Write-Only ORAM with Information-Theoretic security
+# Information-theoretically (IT)-Secure ODSE using Shamir-Secret-Sharing (SSS)-based PIR and Write-Only ORAM
 
 Basic implementation of the ODSE scheme using SSS-based PIR and Write-Only ORAM on SSS-based searchable index. The scheme is described under name $(ODSE^{WO}_{IT})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
 
