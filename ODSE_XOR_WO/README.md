@@ -42,6 +42,11 @@ const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                   
 
 ```
 
+### Notes
+
+The folder ``ODSE_XOR_WO/data`` as well as its subfolders are required to store generated encrypted index and client state. The database input is located in ``ODSE_XOR_WO/data/DB``. All these locations can be changed in the `config.h` file. The implementation recognize DB as a set of document files so that you can copy your DB files to this location. The current DB contains a very small subset of enron DB (link: https://www.cs.cmu.edu/~./enron/).
+
+
 # Build & Compile
 Goto folder ``ODSE_XOR_WO/`` and execute
 ``` 
