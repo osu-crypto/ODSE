@@ -1,6 +1,6 @@
 # ODSE scheme using XOR-PIR and Write-Only ORAM
 
-Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM. The scheme is described under name $(ODSE^{XOR}_{WO})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
+Basic implementation of the ODSE scheme using XOR-PIR and Write-Only ORAM on IND-CPA encrypted searchable index. The scheme is described under name $(ODSE^{WO}_{XOR})$ in the full paper available on ePrint (https://eprint.iacr.org/2017/1158). This project is built on CodeLite IDE (link: http://codelite.org). It is recommended to install CodeLite to load the full ODSE workspace. 
 
 
 # Required Libraries
@@ -21,9 +21,9 @@ ODSE scheme leverages Intel AES-NI to accelerate cryptographic operations. The I
 
 
 # Configuration
-The configuration for ODSE scheme is located at ``ODSE_XOR_WO/config.h``. 
+The configuration for ODSE scheme is located at ``ODSE_WO_XOR/config.h``. 
 
-## Adjustable Parameters:
+## Important Parameters
 
 ```
 
@@ -44,16 +44,16 @@ const std::string SERVER_PORT[NUM_SERVERS] = {"5555","5556"};                   
 
 ### Notes
 
-The folder ``ODSE_XOR_WO/data`` as well as its subfolders are required to store generated encrypted index and client state. The database input is located in ``ODSE_XOR_WO/data/DB``. All these locations can be changed in the `config.h` file. The implementation recognize DB as a set of document files so that you can copy your DB files to this location. The current DB contains a very small subset of enron DB (link: https://www.cs.cmu.edu/~./enron/).
+The folder ``ODSE_WO_XOR/data`` as well as its subfolders are required to store generated encrypted index and client state. The database input is located in ``ODSE_WO_XOR/data/DB``. All these locations can be changed in the `config.h` file. The implementation recognize DB as a set of document files so that you can copy your DB files to this location. The current DB contains a very small subset of enron DB (link: https://www.cs.cmu.edu/~./enron/).
 
 
 # Build & Compile
-Goto folder ``ODSE_XOR_WO/`` and execute
+Goto folder ``ODSE_WO_XOR/`` and execute
 ``` 
 make
 ```
 
-, which produces the binary executable file named ```ODSE_XOR_WO``` in ``ODSE_XOR_WO/Debug/``.
+, which produces the binary executable file named ```ODSE_WO_XOR``` in ``ODSE_WO_XOR/Debug/``.
 
 ### If there is an error regarding to BOOL/bool type when compiling with Intel-aes-ni
 
@@ -69,24 +69,24 @@ make
 
 1. Disable INTEL_AES_NI in ``IM-DSSE/config.h``
 
-2. Remove the library linker ``-lintel-aes64``  in the make file ``ODSE_XOR_WO/MakeFile``
+2. Remove the library linker ``-lintel-aes64``  in the make file ``ODSE_WO_XOR/MakeFile``
 
 
 # Usage
 
-Run the binary executable file ```ODSE_XOR_WO```, which will ask for either Client or Server mode. The scheme can be tested using either **single** machine or **multiple** machines with network:
+Run the binary executable file ```ODSE_WO_XOR```, which will ask for either Client or Server mode. The scheme can be tested using either **single** machine or **multiple** machines with network:
 
 ## Local Testing:
 1. Set ``SERVER_ADDR`` in ``IM-DSSE/config.h`` to be ``localhost``. 
-2. Compile the code with ``make`` in the ``ODSE_XOR_WO/`` folder. 
-4. Go to ``ODSE_XOR_WO/Debug`` and run the compiled ``ODSE_XOR_WO`` file with two different Terminals, each playing the client/server role.
+2. Compile the code with ``make`` in the ``ODSE_WO_XOR/`` folder. 
+4. Go to ``ODSE_WO_XOR/Debug`` and run the compiled ``ODSE_WO_XOR`` file with two different Terminals, each playing the client/server role.
 
 Note that when running the binary file and selecting the <b>option 1</b> to initalize the encrypted index, press 'n' to avoid transmitting whole encrypted index to the server.
 
 ## Real Network Testing:
-1. Set ``SERVER_ADDR`` and  ``SERVER_PORT`` in ``ODSE_XOR_WO/config.h`` with the corresponding servers' IP address  and port number.
-2. Run ``make`` in ``ODSE_XOR_WO/`` to compile and generate executable file ``ODSE_XOR_WO`` in ``ODSE_XOR_WO/Debug`` folder.
-3. Copy the file ``ODSE_XOR_WO`` in ``ODSE_XOR_WO/Debug`` to the servers
+1. Set ``SERVER_ADDR`` and  ``SERVER_PORT`` in ``ODSE_WO_XOR/config.h`` with the corresponding servers' IP address  and port number.
+2. Run ``make`` in ``ODSE_WO_XOR/`` to compile and generate executable file ``ODSE_WO_XOR`` in ``ODSE_WO_XOR/Debug`` folder.
+3. Copy the file ``ODSE_WO_XOR`` in ``ODSE_WO_XOR/Debug`` to the servers
 4. Execute the file and follow the instruction on the screen.
 
 
